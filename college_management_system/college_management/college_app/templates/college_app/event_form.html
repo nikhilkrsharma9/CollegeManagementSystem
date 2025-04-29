@@ -1,0 +1,13 @@
+<!-- filepath: c:\Users\ASUS\Desktop\practice\college_management_system (Deepseek)\college_management\college_app\templates\college_app\event_form.html -->
+{% extends 'college_app/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>{% if event %}Edit Event{% else %}Add Event{% endif %}</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary mt-3">{% if event %}Update Event{% else %}Create Event{% endif %}</button>
+    </form>
+</div>
+{% endblock %}

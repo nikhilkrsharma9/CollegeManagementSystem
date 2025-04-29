@@ -1,0 +1,153 @@
+{% extends 'college_app/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <!-- Hero Section -->
+    <div class="jumbotron text-center">
+        <h1 class="display-4">Welcome to GGSESTC</h1>
+        <p class="lead">Empowering students with knowledge, ethics, and leadership skills to face global challenges.</p>
+    </div>
+
+    <!-- About Us Section -->
+    <section class="mb-5">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h2><i class="fas fa-info-circle"></i> About Us</h2>
+            </div>
+            <div class="card-body">
+                <p>GGSESTC is a premier institution located in Bokaro, Jharkhand, offering quality education in engineering, management, and computer applications. With state-of-the-art infrastructure and experienced faculty, we aim to foster innovation, research, and holistic development among students.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Mission Section -->
+    <div class="row mb-5">
+        <!-- Vision -->
+        <div class="col-md-6">
+            <div class="card h-100">
+                <div class="card-header bg-success text-white">
+                    <h2><i class="fas fa-eye"></i> Our Vision</h2>
+                </div>
+                <div class="card-body">
+                    <p>To be a center of excellence in technical and professional education, fostering innovation, research, and entrepreneurship to create globally competent professionals who contribute to the advancement of society and industry.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mission -->
+        <div class="col-md-6">
+            <div class="card h-100">
+                <div class="card-header bg-info text-white">
+                    <h2><i class="fas fa-bullseye"></i> Our Mission</h2>
+                </div>
+                <div class="card-body">
+                    <p>To empower students with the knowledge and skills required to excel in a competitive global environment while nurturing ethical values, leadership qualities, and a spirit of innovation.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Infrastructure Section -->
+    <section class="mb-5">
+        <div class="card">
+            <div class="card-header bg-warning">
+                <h2><i class="fas fa-building"></i> Infrastructure Details</h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <p>Our campus features modern classrooms, well-equipped laboratories, a vast library, and high-speed internet connectivity. We also provide excellent residential facilities, sports amenities, and eco-friendly initiatives to ensure a holistic learning environment.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <!-- Example infrastructure image -->
+                        <img src="{% static 'images/campus.jpg' %}" class="img-fluid rounded" alt="Campus View">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <div class="row text-center mb-5">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h3><i class="fas fa-users"></i> 500+</h3>
+                    <p>Students</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h3><i class="fas fa-chalkboard-teacher"></i> 10+</h3>
+                    <p>Faculty</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h3><i class="fas fa-book"></i> 3</h3>
+                    <p>Courses</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h3><i class="fas fa-building"></i> 3</h3>
+                    <p>Departments</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Placements Section -->
+    <section class="mb-5">
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                <h2><i class="fas fa-briefcase"></i> Recent Placements</h2>
+            </div>
+            <div class="card-body" style="max-height: 200px; overflow-y: auto;">
+                {% if placements %}
+                    <ul class="list-group">
+                        {% for placement in placements %}
+                            <li class="list-group-item">
+                                <strong>{{ placement.title }}</strong> at {{ placement.company_name }} on {{ placement.date }}
+                                <p>{{ placement.description }}</p>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>5 placements available at the moment.</p>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="mb-5">
+        <div class="card">
+            <div class="card-header bg-info text-white">
+                <h2><i class="fas fa-calendar-alt"></i> Upcoming Events</h2>
+            </div>
+            <div class="card-body" style="max-height: 200px; overflow-y: auto;">
+                {% if events %}
+                    <ul class="list-group">
+                        {% for event in events %}
+                            <li class="list-group-item">
+                                <strong>{{ event.title }}</strong> on {{ event.date }}
+                                <p>{{ event.description }}</p>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>5 events available at the moment.</p>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

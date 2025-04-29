@@ -1,0 +1,38 @@
+{% extends 'college_app/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-6">
+        <h2>Students</h2>
+    </div>
+    <div class="col-md-6 text-end">
+        <a href="{% url 'student-add' %}" class="btn btn-primary">Add Student</a>
+    </div>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Admission Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for student in students %}
+        <tr>
+            <td>{{ student.student_id }}</td>
+            <td>{{ student.user.get_full_name }}</td>
+            <td>{{ student.department.name }}</td>
+            <td>{{ student.admission_date }}</td>
+            <td>
+                <a href="{% url 'student-update' student.pk %}" class="btn btn-sm btn-warning">Edit</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,18 @@
+<!-- college_app/templates/college_app/logout.html -->
+{% extends 'college_app/base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="text-center">Logged Out</h3>
+            </div>
+            <div class="card-body text-center">
+                <p>You have been successfully logged out.</p>
+                <a href="{% url 'login' %}" class="btn btn-primary">Login Again</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

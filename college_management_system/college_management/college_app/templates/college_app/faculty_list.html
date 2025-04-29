@@ -1,0 +1,38 @@
+{% extends 'college_app/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-6">
+        <h2>Faculty Members</h2>
+    </div>
+    <div class="col-md-6 text-end">
+        <a href="{% url 'faculty-add' %}" class="btn btn-primary">Add Faculty</a>
+    </div>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Designation</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for faculty in faculties %}
+        <tr>
+            <td>{{ faculty.faculty_id }}</td>
+            <td>{{ faculty.user.get_full_name }}</td>
+            <td>{{ faculty.department.name }}</td>
+            <td>{{ faculty.designation }}</td>
+            <td>
+                <a href="{% url 'faculty-update' faculty.pk %}" class="btn btn-sm btn-warning">Edit</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

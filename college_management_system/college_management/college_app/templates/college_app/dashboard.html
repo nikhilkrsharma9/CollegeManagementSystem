@@ -1,0 +1,56 @@
+<!-- college_app/templates/college_app/dashboard.html -->
+{% extends 'college_app/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>College Dashboard</h2>
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card text-white bg-primary mb-3">
+                <div class="card-header">Students</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ students_count }} Students</h5>
+                    <a href="{% url 'student-list' %}" class="text-white">View All</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-success mb-3">
+                <div class="card-header">Faculty</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ faculty_count }} Faculty Members</h5>
+                    <a href="{% url 'faculty-list' %}" class="text-white">View All</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-info mb-3">
+                <div class="card-header">Courses</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ courses_count }} Courses</h5>
+                    <a href="{% url 'course-list' %}" class="text-white">View All</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-warning mb-3">
+                <div class="card-header">Events</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ events_count }} Events</h5>
+                    <a href="{% url 'event-list' %}" class="text-white">View All</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-danger mb-3">
+                <div class="card-header">Placements</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ placements_count }} Placements</h5>
+                    <a href="{% url 'placement-list' %}" class="text-white">View All</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

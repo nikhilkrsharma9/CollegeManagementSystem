@@ -1,0 +1,18 @@
+<!-- filepath: c:\Users\ASUS\Desktop\practice\college_management_system (Deepseek)\college_management\college_app\templates\college_app\student_register.html -->
+{% extends 'college_app/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Student Registration</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            {{ user_form.as_p }}
+        </div>
+        <div class="mb-3">
+            {{ student_form.as_p }}
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+</div>
+{% endblock %}

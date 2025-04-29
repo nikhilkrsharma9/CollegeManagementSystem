@@ -1,0 +1,14 @@
+<!-- filepath: c:\Users\ASUS\Desktop\practice\college_management_system (Deepseek)\college_management\college_app\templates\college_app\student_details.html -->
+{% extends 'college_app/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Student Details</h2>
+    <p><strong>Username:</strong> {{ student.user.username }}</p>
+    <p><strong>Email:</strong> {{ student.user.email }}</p>
+    <p><strong>Student ID:</strong> {{ student.student_id }}</p>
+    <p><strong>Department:</strong> {{ student.department }}</p>
+    <p><strong>Admission Date:</strong> {{ student.admission_date }}</p>
+    <p><strong>Graduation Date:</strong> {{ student.graduation_date }}</p>
+</div>
+{% endblock %}

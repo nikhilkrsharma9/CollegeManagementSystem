@@ -1,0 +1,21 @@
+<!-- filepath: c:\Users\ASUS\Desktop\practice\college_management_system (Deepseek)\college_management\college_app\templates\college_app\vision_mission.html -->
+{% extends 'college_app/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Vision & Mission</h1>
+    <h2>Vision:
+
+
+        To be a center of excellence in technical and professional education, fostering innovation, research, and entrepreneurship to create globally competent professionals who contribute to the advancement of society and industry.</h2>
+    <p>{{ institutional_info.vision }}</p>
+    <h2>Mission:
+
+        
+        To provide high-quality education in engineering, management, and computer applications through a student-centric approach and state-of-the-art infrastructure.
+        To nurture ethical values, leadership qualities, and a spirit of innovation among students.
+        To promote research and development activities that address real-world challenges and contribute to societal growth.
+        To empower students with the knowledge and skills required to excel in a competitive global environment.</h2>
+    <p>{{ institutional_info.mission }}</p>
+</div>
+{% endblock %}

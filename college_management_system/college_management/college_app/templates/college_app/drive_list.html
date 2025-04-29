@@ -1,0 +1,41 @@
+{% extends 'college_app/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Upcoming Placement Drives</h2>
+        {% if user.is_authenticated and user.is_staff or user.groups.filter.name='Placement Cell' %}
+            <a href="{% url 'placement-create' %}" class="btn btn-primary">
+                <i class="fas fa-plus"></i> Add Drive
+            </a>
+        {% endif %}
+    </div>
+
+    <div class="list-group">
+        {% for drive in drives %}
+        <div class="list-group-item mb-3">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{ drive.company_name }}</h5>
+                <small class="text-muted">{{ drive.drive_date|date:"M d, Y" }}</small>
+            </div>
+            <p class="mb-1"><strong>Package:</strong> {{ drive.salary_package }}</p>
+            <p class="mb-1"><strong>Deadline:</strong> {{ drive.registration_deadline|date:"M d, Y" }}</p>
+            <p class="mb-3">{{ drive.description|truncatewords:30 }}</p>
+            <div>
+                <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                {% if user == drive.contact_person or user.is_staff %}
+                <a href="{% url 'placement-update' drive.pk %}" class="btn btn-sm btn-outline-secondary">Edit</a>
+                {% endif %}
+                {% if drive.brochure %}
+                <a href="{{ drive.brochure.url }}" class="btn btn-sm btn-outline-info" download>
+                    <i class="fas fa-download"></i> Brochure
+                </a>
+                {% endif %}
+            </div>
+        </div>
+        {% empty %}
+        <div class="alert alert-info">No upcoming placement drives scheduled.</div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

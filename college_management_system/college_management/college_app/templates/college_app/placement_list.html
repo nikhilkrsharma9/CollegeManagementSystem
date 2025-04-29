@@ -1,0 +1,73 @@
+{% extends 'college_app/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Placements</h1>
+    <a href="{% url 'placement-create' %}" class="btn btn-primary mb-3">Add Placement</a>
+    
+    <!-- Placement Ad: Software Engineer at TechCorp -->
+    <div class="card mb-3">
+        <div class="card-header bg-primary text-white">
+            <h5>Software Engineer at TechCorp</h5>
+        </div>
+        <div class="card-body">
+            <p><strong>Company Name:</strong> TechCorp</p>
+            <p><strong>Date:</strong> 2025-05-15</p>
+            <p><strong>Description:</strong> TechCorp is hiring fresh graduates for the role of Software Engineer. Candidates should have strong programming skills in Python and Java. The position offers a competitive salary package of 10 LPA.</p>
+            <p><strong>Location:</strong> Bangalore, India</p>
+        </div>
+    </div>
+
+    <!-- Placement Ad: Data Analyst at DataWiz -->
+    <div class="card mb-3">
+        <div class="card-header bg-success text-white">
+            <h5>Data Analyst at DataWiz</h5>
+        </div>
+        <div class="card-body">
+            <p><strong>Company Name:</strong> DataWiz</p>
+            <p><strong>Date:</strong> 2025-06-01</p>
+            <p><strong>Description:</strong> DataWiz is looking for Data Analysts with a passion for data visualization and analytics. Proficiency in SQL and Tableau is required. The salary package is 8 LPA.</p>
+            <p><strong>Location:</strong> Hyderabad, India</p>
+        </div>
+    </div>
+
+    <!-- Placement Ad: Marketing Executive at Brandify -->
+    <div class="card mb-3">
+        <div class="card-header bg-warning text-white">
+            <h5>Marketing Executive at Brandify</h5>
+        </div>
+        <div class="card-body">
+            <p><strong>Company Name:</strong> Brandify</p>
+            <p><strong>Date:</strong> 2025-05-20</p>
+            <p><strong>Description:</strong> Brandify is hiring Marketing Executives to join their dynamic team. Candidates with excellent communication skills and a background in marketing are preferred. The salary package is 6 LPA.</p>
+            <p><strong>Location:</strong> Mumbai, India</p>
+        </div>
+    </div>
+
+    <!-- Placement Ad: Mechanical Engineer at AutoTech -->
+    <div class="card mb-3">
+        <div class="card-header bg-danger text-white">
+            <h5>Mechanical Engineer at AutoTech</h5>
+        </div>
+        <div class="card-body">
+            <p><strong>Company Name:</strong> AutoTech</p>
+            <p><strong>Date:</strong> 2025-05-25</p>
+            <p><strong>Description:</strong> AutoTech is recruiting Mechanical Engineers for their R&D division. Candidates with expertise in CAD software and a strong understanding of automotive systems are encouraged to apply. The salary package is 7 LPA.</p>
+            <p><strong>Location:</strong> Pune, India</p>
+        </div>
+    </div>
+
+    <!-- Placement Ad: Cybersecurity Analyst at SecureNet -->
+    <div class="card mb-3">
+        <div class="card-header bg-info text-white">
+            <h5>Cybersecurity Analyst at SecureNet</h5>
+        </div>
+        <div class="card-body">
+            <p><strong>Company Name:</strong> SecureNet</p>
+            <p><strong>Date:</strong> 2025-06-10</p>
+            <p><strong>Description:</strong> SecureNet is hiring Cybersecurity Analysts to strengthen their security team. Knowledge of network security, ethical hacking, and penetration testing is required. The salary package is 9 LPA.</p>
+            <p><strong>Location:</strong> Chennai, India</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+<!-- filepath: c:\Users\ASUS\Desktop\practice\college_management_system (Deepseek)\college_management\college_app\templates\college_app\infrastructure.html -->
+{% extends 'college_app/base.html' %}
+{% load static %} <!-- Add this line -->
+
+{% block content %}
+<div class="container mt-4">
+    <h1>GGSESTC (Guru Gobind Singh Educational Society's Technical Campus) boasts state-of-the-art infrastructure designed to provide a conducive environment for learning, innovation, and research. The campus is equipped with modern classrooms, well-furnished laboratories, and advanced computing facilities to support technical and professional education.
+
+        The college library is a hub of knowledge, housing a vast collection of books, journals, and digital resources to cater to the academic needs of students and faculty. The campus also features high-speed internet connectivity, ensuring seamless access to online learning resources.
+        
+        GGSESTC provides excellent residential facilities with separate hostels for boys and girls, ensuring a safe and comfortable stay for students. The campus includes sports facilities, recreational areas, and a cafeteria to promote holistic development and well-being. Additionally, the institution emphasizes sustainability with eco-friendly initiatives, including green spaces and energy-efficient infrastructure.
+        
+        With its cutting-edge facilities and student-centric approach, GGSESTC creates an ideal environment for academic excellence and personal growth.</h1>
+    <p>{{ institutional_info.infrastructure_details }}</p>
+    <img src="{% static 'images/campus.jpg' %}" class="img-fluid rounded" alt="Campus View">
+</div>
+{% endblock %}
