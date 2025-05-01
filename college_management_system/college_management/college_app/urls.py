@@ -45,4 +45,6 @@ urlpatterns = [
     # Event URLs
     path('events/', views.event_list, name='event-list'),
     path('events/add/', views.event_create, name='event-create'),
+    
+    path('faculty/register/', views.faculty_register, name='faculty-register'),
 ]

@@ -275,3 +275,24 @@ def create_placement_drive(request):
             contact_person=user,  # Assign a valid User instance
         )
         placement_drive.save()
+
+def faculty_register(request):
+    if request.method == 'POST':
+        user_form = FacultyUserForm(request.POST)
+        faculty_form = FacultyForm(request.POST)
+        if user_form.is_valid() and faculty_form.is_valid():
+            user = user_form.save()
+            faculty = faculty_form.save(commit=False)
+            faculty.user = user
+            faculty.save()
+            login(request, user)  # Automatically log in the faculty after registration
+            messages.success(request, 'Faculty registered successfully!')
+            return redirect('faculty-list')
+    else:
+        user_form = FacultyUserForm()
+        faculty_form = FacultyForm()
+    return render(request, 'college_app/faculty_register.html', {
+        'user_form': user_form,
+        'faculty_form': faculty_form
+    })
+    

@@ -9,7 +9,9 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="{% url 'dashboard' %}">Faculty Access</a>
+            {% if request.resolver_match.url_name != "student-details" %}
+                <a class="navbar-brand" href="{% url 'dashboard' %}">Faculty Access</a>
+            {% endif %}
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -39,10 +41,13 @@
                         </li>
                     {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'student-login' %}">Student Login</a> <!-- Link to student login -->
+                            <a class="nav-link" href="{% url 'student-login' %}">Login</a> <!-- Link to student login -->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'register' %}">Register</a>
+                            <a class="nav-link" href="{% url 'register' %}">Student Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'faculty-register' %}" class="btn btn-secondary">Faculty Register</a>
                         </li>
                     {% endif %}
                 </ul>
